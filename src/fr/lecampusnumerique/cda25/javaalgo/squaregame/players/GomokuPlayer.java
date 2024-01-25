@@ -1,5 +1,7 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.players;
 
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.GomokuSymbol;
+
 public class GomokuPlayer extends Player{
 
 
