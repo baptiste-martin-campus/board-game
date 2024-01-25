@@ -1,4 +1,4 @@
-package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols;
+package fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols;
 
 public enum Connect4Symbol implements Symbol {
 

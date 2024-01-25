@@ -1,4 +1,4 @@
-package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols;
+package fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols;
 
 import java.util.Arrays;
 import java.util.List;

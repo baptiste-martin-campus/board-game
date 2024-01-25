@@ -1,6 +1,6 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.players;
 
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.TicTacToeSymbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.TicTacToeSymbol;
 
 public class TicTacToePlayer extends Player {
 

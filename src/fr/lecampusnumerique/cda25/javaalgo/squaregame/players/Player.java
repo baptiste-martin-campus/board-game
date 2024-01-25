@@ -1,6 +1,6 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.players;
 
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.Symbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 
 public abstract class Player {
 
