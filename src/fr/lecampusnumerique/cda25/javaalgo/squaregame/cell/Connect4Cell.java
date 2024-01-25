@@ -7,7 +7,7 @@ import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.Incompat
 public class Connect4Cell extends Cell {
 
     @Override
-    public Symbol getRepresentation() {
+    public String getRepresentation() {
         return getSymbol().getRepresentation();
     }
 
