@@ -1,13 +1,14 @@
-package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols;
+package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell;
 
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.Cell;
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.exception.IncompatibleSymbolException;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.GomokuSymbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.IncompatibleSymbolException;
 
 public class GomokuCell extends Cell {
 
     @Override
     public String getRepresentation() {
-        return "| " + getSymbol().getRepresentation() + " ";
+        return getSymbol().getRepresentation();
     }
 
     @Override
@@ -17,7 +18,7 @@ public class GomokuCell extends Cell {
 
     @Override
     public void occupy(Symbol symbol)  throws IncompatibleSymbolException {
-        if(symbol instanceof TicTacToeSymbol){
+        if(symbol instanceof GomokuSymbol){
             setSymbol(symbol);
         } else {
             throw new IncompatibleSymbolException("Gomoku");

@@ -1,7 +1,7 @@
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.*;
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.Connect4Symbol;
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.TicTacToeSymbol;
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.exception.IncompatibleSymbolException;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Connect4Symbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.TicTacToeSymbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.IncompatibleSymbolException;
 
 public class DebugMain {
     public static void main(String[] args) {

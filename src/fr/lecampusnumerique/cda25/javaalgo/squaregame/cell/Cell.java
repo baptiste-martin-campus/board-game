@@ -1,7 +1,7 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell;
 
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.Symbol;
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.exception.IncompatibleSymbolException;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.IncompatibleSymbolException;
 
 public abstract class Cell {
 

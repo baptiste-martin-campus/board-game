@@ -1,4 +1,4 @@
-package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.symbols.exception;
+package fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception;
 
 public class IncompatibleSymbolException extends Exception {
 
