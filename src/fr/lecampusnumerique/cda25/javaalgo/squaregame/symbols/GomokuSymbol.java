@@ -20,7 +20,7 @@ public enum GomokuSymbol implements Symbol{
         this.representation = representation;
     }
 
-    public static List<GomokuSymbol> getPlayerTicTacToeSymbols(){
+    public static List<GomokuSymbol> getPlayerGomokuSymbols(){
         return Arrays.stream(GomokuSymbol.values())
                 .filter(gomokuSymbol -> gomokuSymbol != DEFAULT)
                 .toList();
