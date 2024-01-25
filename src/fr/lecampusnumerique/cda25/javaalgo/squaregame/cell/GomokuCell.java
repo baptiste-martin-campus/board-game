@@ -7,7 +7,7 @@ import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.Incompat
 public class GomokuCell extends Cell {
 
     @Override
-    public Symbol getRepresentation() {
+    public String getRepresentation() {
         return getSymbol().getRepresentation();
     }
 
@@ -18,7 +18,7 @@ public class GomokuCell extends Cell {
 
     @Override
     public void occupy(Symbol symbol)  throws IncompatibleSymbolException {
-        if(symbol instanceof TicTacToeSymbol){
+        if(symbol instanceof GomokuSymbol){
             setSymbol(symbol);
         } else {
             throw new IncompatibleSymbolException("Gomoku");

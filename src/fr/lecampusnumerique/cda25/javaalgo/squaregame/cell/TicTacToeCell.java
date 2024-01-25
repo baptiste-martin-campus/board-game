@@ -6,8 +6,8 @@ import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.Incompat
 
 public class TicTacToeCell extends Cell {
     @Override
-    public Symbol getRepresentation() {
-        getSymbol().getRepresentation();
+    public String getRepresentation() {
+        return getSymbol().getRepresentation();
     }
 
     @Override
