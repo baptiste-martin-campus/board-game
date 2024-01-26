@@ -16,12 +16,18 @@ public class Connect4Menu {
 
     private Connect4Board board;
 
+    /**Retourne le plateau de jeu du Puissance 4  pour la patie à venir
+     * @return Connect4Board
+    */
     public Connect4Board getBoard(){
         return board;
     }
 
     private ArrayList<Connect4Player> players;
 
+    /**Retourne la liste de joueur pour la partie de puissance 4 à venir 
+     * @return ArrayList<Connect4Player>
+    */
     public ArrayList<Connect4Player> getPlayers(){
         return players;
     }
