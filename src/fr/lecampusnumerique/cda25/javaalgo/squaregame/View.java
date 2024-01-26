@@ -21,23 +21,37 @@ public class View {
         System.out.println(line.repeat(nbLine));
     }
 
-    public void displayNbPlayerChoice(int nbPlayer){
-        System.out.println("Choisissez le nombre de joueurs");
-        boolean isValid = false;
-        try {
-            Integer.parseInt(String.valueOf(nbPlayer));
-            isValid = true;
-        } catch (NumberFormatException e) {
-            System.out.println("Nombre invalide, veuillez recommencer");
-        }
-        if (isValid && nbPlayer >= 0 && nbPlayer <= 2) {
-            if (nbPlayer == 0) {
-                System.out.println("COM VS COM");
-            } else if (nbPlayer == 1) {
-                System.out.println("Joueur1 VS COM");
-            } else {
-                System.out.println("Joueur1 VS Joueur2");
-            }
-        }
+    public void displayNbPlayerChoice(){
+        System.out.println("Choisissez le nombre de joueurs:");
+        System.out.println("0: COM VS COM");
+        System.out.println("1: Joueur VS COM");
+        System.out.println("2: Joueur VS Joueur");
+    }
+
+    public void displayRowChoice(){
+        System.out.println("Choisissez le numéro de la ligne:");
+    }
+
+    public void displayColChoice(){
+        System.out.println("Choisissez le numéro de la colonne:");
+    }
+
+    public void nextPlayer(){
+        System.out.println("Au joueur suivant !");
+    }
+    public void displayWinner(String player){
+        System.out.println("Félicitations " + player + " ! Tu as gagné ! \uD83D\uDC4F \uD83D\uDC4F \uD83D\uDC4F");
+    }
+
+    public void displayTied(){
+        System.out.println("Game Over ! vous êtes nuls ...");
+    }
+
+    public void displayErrorPlayerChoice(){
+        System.err.println("Coup invalide ! Veuillez recommencer !");
+    }
+
+    public void displayErrorNbPlayerChoice(){
+        System.err.println("Nombre invalide ! Veuillez recommencer !");
     }
 }
