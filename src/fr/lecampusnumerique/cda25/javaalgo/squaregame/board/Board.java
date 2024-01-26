@@ -1,12 +1,18 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.board;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.Cell;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.TicTacToeCell;
 
-public class Board {
+public abstract class Board {
 
     private int longueur;
     private int largeur;
     private Cell[][] board;
+
+    public Board(int largeur, int longueur){
+        this.largeur = largeur;
+        this.longueur = longueur;
+    }
 
     public Cell[][] getBoard() {
         return board;
@@ -31,4 +37,9 @@ public class Board {
     public void setLargeur(int largeur) {
         this.largeur = largeur;
     }
+
+    public abstract boolean verifyCoordAbs(int coord);
+
+    public abstract boolean verifyCoordOrd(int coord);
+
 }
