@@ -22,18 +22,18 @@ public class View {
     }
 
     public void displayNbPlayerChoice(){
-        System.out.println("Choisissez le nombre de joueurs:");
+        System.out.println("Saisissez le type de partie:");
         System.out.println("0: COM VS COM");
         System.out.println("1: Joueur VS COM");
         System.out.println("2: Joueur VS Joueur");
     }
 
     public void displayRowChoice(){
-        System.out.println("Choisissez le numéro de la ligne:");
+        System.out.println("Saisissez le numéro de la ligne:");
     }
 
     public void displayColChoice(){
-        System.out.println("Choisissez le numéro de la colonne:");
+        System.out.println("Saisissez le numéro de la colonne:");
     }
 
     public void nextPlayer(){
@@ -44,14 +44,18 @@ public class View {
     }
 
     public void displayTied(){
-        System.out.println("Game Over ! vous êtes nuls ...");
+        System.out.println("Game Over ! Aucun gagnant ! \uD83D\uDE31\n");
     }
 
     public void displayErrorPlayerChoice(){
         System.err.println("Coup invalide ! Veuillez recommencer !");
+        System.err.println("Vous devez saisir un nombre valide");
+        System.err.println("Veuillez recommencer");
     }
 
     public void displayErrorNbPlayerChoice(){
         System.err.println("Nombre invalide ! Veuillez recommencer !");
+        System.err.println("Vous devez saisir un nombre valide");
+        System.err.println("Veuillez recommencer");
     }
 }
