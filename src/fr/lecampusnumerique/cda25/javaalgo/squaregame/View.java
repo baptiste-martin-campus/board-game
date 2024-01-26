@@ -23,9 +23,9 @@ public class View {
 
     public void displayNbPlayerChoice(){
         System.out.println("Saisissez le type de partie:");
-        System.out.println("0: COM VS COM");
+        System.out.println("0: Joueur VS Joueur");
         System.out.println("1: Joueur VS COM");
-        System.out.println("2: Joueur VS Joueur");
+        System.out.println("2: COM VS COM");
     }
 
     public void displayRowChoice(){
