@@ -4,18 +4,29 @@ import java.util.Scanner;
 
 public class Input {
 
-    public int firstCoordonate(){
+    public int coordonateAbs(){
         Scanner first = new Scanner(System.in);
         System.out.println("Entrer le coordonné x : ");
-        int x = first.nextInt();
-        return x;
+        return first.nextInt();
     }
 
-    public int secondCoordonate(){
+    public int coordonateOrd(){
         Scanner second = new Scanner(System.in);
         System.out.println("Entrer le coordonné x : ");
-        int y = second.nextInt();
-        return y;
+        return second.nextInt();
+    }
+
+
+    public String getChoicePlayer(){
+        Scanner choice = new Scanner(System.in);
+        System.out.println("Choix player : ");
+        return choice.nextLine();
+    }
+
+    public String getChoiceGame(){
+        Scanner choice = new Scanner(System.in);
+        System.out.println("Choix game : ");
+        return choice.nextLine();
     }
 
 
