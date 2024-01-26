@@ -48,14 +48,26 @@ public class View {
     }
 
     public void displayErrorPlayerChoice(){
-        System.err.println("Coup invalide ! Veuillez recommencer !");
-        System.err.println("Vous devez saisir un nombre valide");
-        System.err.println("Veuillez recommencer");
+        System.err.println("Coup invalide !");
     }
 
     public void displayErrorNbPlayerChoice(){
-        System.err.println("Nombre invalide ! Veuillez recommencer !");
-        System.err.println("Vous devez saisir un nombre valide");
-        System.err.println("Veuillez recommencer");
+        System.err.println("Chiffre invalide !");
+    }
+
+    public void displayErrorChoiceIsString(){
+        System.err.println("Vous devez saisir un chiffre");
+    }
+
+    public void displayErrorChoiceRange(){
+        System.err.println("Vous devez saisir un chiffre entre 0 et 2");
+    }
+
+    public void displayErrorTryAgain(){
+        System.err.println("Veuillez recommencer !");
+    }
+
+    public void displayErrorAgainAgain(){
+        System.err.println("Bon tu abuses là, tu cherches la bagarre ? Tu veux jouer ou pas ?");
     }
 }
