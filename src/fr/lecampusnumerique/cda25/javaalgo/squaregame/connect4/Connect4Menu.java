@@ -41,7 +41,7 @@ public class Connect4Menu {
     private ArrayList<Connect4Player> playersInitialisation(){        
         View.displayChooseNPCNumber();
         int nbPNJ = InteractionUtilisateur.getPNJNumber();
-        for (int i = nbPNJ; i < 2; i++)) {
+        for (int i = nbPNJ; i < 2; i++) {
             Connect4Player player=new Connect4Player();
             do {
                 player.setSymbol(InteractionUtilisateur.getPlayerConnect4Symbols());
