@@ -22,18 +22,11 @@ public class Input {
         return second.nextInt();
     }
 
-
-
     public boolean isHumanPlayer(){
-        boolean res = false;
         Scanner choice = new Scanner(System.in);
-        view.displayTypeOfPlayer();
         String str = choice.nextLine();
         String strUpper = str.toUpperCase();
-        if (strUpper.equals("OUI") ||  strUpper.equals("O")){
-            res = true;
-        }
-        return res;
+        return strUpper.equals("OUI") ||  strUpper.equals("O");
     }
 
 
