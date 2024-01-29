@@ -44,7 +44,7 @@ public class Connect4Menu {
     /**Initialise les joueurs de la partie à venir selon le choix de l'utilisateur.
      * @return ArrayList<Connect4Player> 
      */
-    private ArrayList<Connect4Player> playersInitialisation(){        
+    protected ArrayList<Connect4Player> playersInitialisation(){        
         View.displayChooseNPCNumber();
         int nbPNJ = InteractionUtilisateur.getPNJNumber();
         for (int i = nbPNJ; i < 2; i++) {
