@@ -20,7 +20,6 @@ public class GomokuBoard extends Board{
     }
 
 
-
     public boolean verifyCoordAbs(int coord) {
         return coord >= 0 && coord < getLargeur() ;
     }
@@ -29,3 +28,4 @@ public class GomokuBoard extends Board{
         return coord >= 0 && coord < getLongueur();
     }
 }
+
