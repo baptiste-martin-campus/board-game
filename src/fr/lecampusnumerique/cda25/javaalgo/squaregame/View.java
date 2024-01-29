@@ -21,7 +21,7 @@ public class View {
         System.out.println(line.repeat(nbLine));
     }
 
-    public void displayNbPlayerChoice(){
+    public void displayTypeOfPlayer(){
         System.out.println("Choisissez le nombre de joueurs:");
         System.out.println("0: COM VS COM");
         System.out.println("1: Joueur VS COM");
