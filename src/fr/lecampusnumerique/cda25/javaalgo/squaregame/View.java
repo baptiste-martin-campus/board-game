@@ -1,14 +1,39 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.cell.Cell;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 
-public class View {
+public enum View {
+
+    /////Constantes et attribut/////
+
+    ;
+
+    private String prompt;
+
+
+    /////Constructeur/////
+
+
+    private View (String prompt){
+        this.prompt=prompt;
+    }
+
+
+    /////Methodes/////
+
+    /**
+     * Affiche un message pour que l'utilisateur choisie le type de joueur pour la partie à venir
+     */
+    public void displayTypefOfPlayer(Symbol pionSymbol){
+        System.out.println("Le joueur qui aura les "+pionSymbol.getRepresentation()+" sera un humain (oui/non)? \b(une ia jouera en cas de réponse négative) ");
+    }
 
     //affichage du plateau
     public void displayBoard(Cell[][] board) {
         setLines(board);
         for (Cell[] cells : board) {
             for (Cell cell : cells) {
-                System.out.println(cell.getRepresentation());
+                System.out.println("| "+cell.getRepresentation()+" ");
             }
             setLines(board);
         }
