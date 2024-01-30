@@ -6,35 +6,26 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TicTacToeBoard extends Board{
-    private static final int SIZE = 3;
-    private TicTacToeCell[][] board;
+    private TicTacToeCell[][] board ;
 
     public TicTacToeBoard(){
-        board = new TicTacToeCell[SIZE][SIZE];
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+        super(3,3);
+        board = new TicTacToeCell[getLargeur()][getLongueur()];
+        for (int i = 0; i < getLargeur(); i++) {
+            for (int j = 0; j < getLongueur(); j++) {
                 board[i][j] = new TicTacToeCell();
             }
         }
     }
-
-
-    public String getMoveFromPlayer() {
-        String result = "Hors coordonnées";
-        Input input = new Input();
-        try {
-            int x;
-            int y;
-            do {
-                x = input.firstCoordonate();
-                y = input.secondCoordonate();
-            }while ((x > SIZE || y > SIZE) && board[x][y].isOccupied());
-            result = "" + x + y;
-        } catch (InputMismatchException e) {
-            System.out.println(e);
-        }
-
-        return result;
+    public boolean verifyCoordAbs(int coord) {
+        return coord >= 0 && coord < getLargeur();
     }
+
+    public boolean verifyCoordOrd(int coord){
+        return coord >= 0 && coord < getLongueur();
+    }
+
+
+
 
 }
