@@ -1,15 +1,18 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.players;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Connect4Symbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 
-public class Connect4Player extends Player{
+public class Connect4Player implements Player{
 
-
-    public void setConnect4Symbol(Connect4Symbol symbol){
-        super.setSymbol(symbol);
+    public Symbol representation = null;
+    @Override
+    public void setRepresentation(Symbol representation) {
+        this.representation = representation;
     }
 
-    public String getRepresentation(){
-        return getSymbol().getRepresentation();
+    @Override
+    public Symbol getRepresentation() {
+        return representation;
     }
 }

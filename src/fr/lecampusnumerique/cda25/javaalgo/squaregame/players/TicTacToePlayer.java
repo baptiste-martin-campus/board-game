@@ -1,15 +1,17 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.players;
 
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.TicTacToeSymbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 
-public class TicTacToePlayer extends Player {
+public class TicTacToePlayer implements Player {
 
-    public void setTicTacToeSymbol(TicTacToeSymbol symbol){
-        super.setSymbol(symbol);
+    public Symbol representation = null;
+    @Override
+    public Symbol getRepresentation() {
+        return representation;
     }
 
-    public String getRepresentation(){
-        return getSymbol().getRepresentation();
+    @Override
+    public void setRepresentation(Symbol representation) {
+        this.representation = representation;
     }
-
 }
