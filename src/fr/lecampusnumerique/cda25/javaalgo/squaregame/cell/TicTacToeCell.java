@@ -4,21 +4,29 @@ import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.TicTacToeSymbol;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.IncompatibleSymbolException;
 
-public class TicTacToeCell extends Cell {
+public class TicTacToeCell implements Cell {
+
+    Symbol representation;
+
     @Override
-    public String getRepresentation() {
-        return getSymbol().getRepresentation();
+    public Symbol getRepresentation() {
+        return representation;
+    }
+
+    @Override
+    public void setRepresentation(Symbol representation) {
+        this.representation = representation;
     }
 
     @Override
     public boolean isOccupied() {
-        return getSymbol() != TicTacToeSymbol.DEFAULT;
+        return getRepresentation() != TicTacToeSymbol.DEFAULT;
     }
 
     @Override
     public void occupy(Symbol symbol) throws IncompatibleSymbolException {
         if (symbol instanceof TicTacToeSymbol) {
-            setSymbol(symbol);
+            setRepresentation(symbol);
         } else {
             throw new IncompatibleSymbolException("TicTacToe");
         }
