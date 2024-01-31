@@ -60,7 +60,7 @@ public enum TicTacToeSymbol implements Symbol {
      */
     @Override
     public boolean isOccupied() {
-        return !this.getSymbol().DEFAULT.representation;
+        return false;
     }
 
     /**

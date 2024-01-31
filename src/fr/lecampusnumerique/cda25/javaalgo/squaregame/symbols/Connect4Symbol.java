@@ -1,5 +1,8 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols;
 
+import java.util.Arrays;
+import java.util.List;
+
 public enum Connect4Symbol implements Symbol {
 
     DEFAULT(" "),
@@ -9,7 +12,6 @@ public enum Connect4Symbol implements Symbol {
 
     private String representation;
 
-    @Override
     public String getRepresentation() {
         return representation;
     }
@@ -18,6 +20,11 @@ public enum Connect4Symbol implements Symbol {
         this.representation = representation;
     }
 
+    public static List<Connect4Symbol> getPlayerConnect4Symbols(){
+        return Arrays.stream(Connect4Symbol.values())
+                .filter(connect4Symbol -> connect4Symbol != DEFAULT)
+                .toList();
+    }
 
     @Override
     public String getSymbol() {
@@ -25,8 +32,8 @@ public enum Connect4Symbol implements Symbol {
     }
 
     @Override
-    public String setSymbol(String symbol) {
-        return null;
+    public void setSymbol(String symbol) {
+        this.representation = symbol;
     }
 
     @Override

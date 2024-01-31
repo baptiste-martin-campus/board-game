@@ -37,7 +37,4 @@ public class TicTacToeCell implements Cell {
         }
     }
 
-    public TicTacToeCell() {
-        super(TicTacToeSymbol.DEFAULT);
-    }
 }

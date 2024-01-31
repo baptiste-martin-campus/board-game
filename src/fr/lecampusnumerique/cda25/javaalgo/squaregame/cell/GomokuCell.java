@@ -36,8 +36,4 @@ public class GomokuCell implements Cell {
             throw new IncompatibleSymbolException("Gomoku");
         }
     }
-
-    public GomokuCell() {
-        super(GomokuSymbol.DEFAULT);
-    }
 }

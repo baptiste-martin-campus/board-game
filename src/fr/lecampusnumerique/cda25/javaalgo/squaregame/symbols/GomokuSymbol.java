@@ -11,7 +11,6 @@ public enum GomokuSymbol implements Symbol{
 
     private String representation;
 
-    @Override
     public String getRepresentation() {
         return representation;
     }
@@ -32,8 +31,8 @@ public enum GomokuSymbol implements Symbol{
     }
 
     @Override
-    public String setSymbol(String symbol) {
-        return null;
+    public void setSymbol(String symbol) {
+        this.representation = symbol;
     }
 
     @Override

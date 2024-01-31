@@ -1,8 +1,6 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell;
 
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.players.Player;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Connect4Symbol;
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.GomokuSymbol;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.IncompatibleSymbolException;
 
@@ -36,10 +34,6 @@ public class Connect4Cell implements Cell {
     @Override
     public void setRepresentation(Symbol representation) {
         this.representation = representation;
-    }
-
-    public Connect4Cell() {
-        super(Connect4Symbol.DEFAULT);
     }
 
 }
