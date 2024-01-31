@@ -1,9 +1,14 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell;
 
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.players.Player;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.TicTacToeSymbol;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.IncompatibleSymbolException;
 
+/**
+ * Cell du jeu TicTacToe
+ * @see Cell
+ */
 public class TicTacToeCell implements Cell {
 
     Symbol representation;
