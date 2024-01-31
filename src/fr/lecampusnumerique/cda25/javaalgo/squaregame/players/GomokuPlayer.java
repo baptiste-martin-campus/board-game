@@ -1,15 +1,21 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.players;
 
-import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.GomokuSymbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 
-public class GomokuPlayer extends Player{
+/**
+ * Player du jeu Gomoku
+ * @see Player
+ */
+public class GomokuPlayer implements Player{
 
-
-    public void setGomokuSymbol(GomokuSymbol symbol){
-        super.setSymbol(symbol);
+    public Symbol representation = null;
+    @Override
+    public Symbol getRepresentation(){
+        return representation;
     }
 
-    public String getRepresentation(){
-        return getSymbol().getRepresentation();
+    @Override
+    public void setRepresentation(Symbol representation)  {
+        this.representation = representation;
     }
 }
