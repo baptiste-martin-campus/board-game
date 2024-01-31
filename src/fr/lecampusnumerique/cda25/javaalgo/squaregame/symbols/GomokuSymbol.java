@@ -26,4 +26,23 @@ public enum GomokuSymbol implements Symbol{
                 .toList();
     }
 
+    @Override
+    public String getSymbol() {
+        return null;
+    }
+
+    @Override
+    public String setSymbol(String symbol) {
+        return null;
+    }
+
+    @Override
+    public boolean isOccupied() {
+        return false;
+    }
+
+    @Override
+    public void occupy(Symbol symbol) {
+
+    }
 }
