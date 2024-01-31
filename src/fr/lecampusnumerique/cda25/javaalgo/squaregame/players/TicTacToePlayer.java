@@ -2,6 +2,10 @@ package fr.lecampusnumerique.cda25.javaalgo.squaregame.players;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 
+/**
+ * Player du jeu TicTacToe
+ * @see Player
+ */
 public class TicTacToePlayer implements Player {
 
     public Symbol representation = null;
