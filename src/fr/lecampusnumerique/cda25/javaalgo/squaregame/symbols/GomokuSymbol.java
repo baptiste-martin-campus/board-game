@@ -9,9 +9,8 @@ public enum GomokuSymbol implements Symbol{
     B("B"),
     ;
 
-    private String representation;
+    private final String representation;
 
-    @Override
     public String getRepresentation() {
         return representation;
     }
@@ -24,6 +23,11 @@ public enum GomokuSymbol implements Symbol{
         return Arrays.stream(GomokuSymbol.values())
                 .filter(gomokuSymbol -> gomokuSymbol != DEFAULT)
                 .toList();
+    }
+
+    @Override
+    public String getSymbol() {
+        return null;
     }
 
 }

@@ -3,25 +3,31 @@ package fr.lecampusnumerique.cda25.javaalgo.squaregame.cell;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.exception.IncompatibleSymbolException;
 
-public abstract class Cell {
+/**
+ * Interface Cell
+ */
+public interface Cell {
 
-    private Symbol symbol;
+    /**
+     * Détermine si une case est occupée
+     */
+    boolean isOccupied();
 
-    protected Symbol getSymbol() {
-        return symbol;
-    }
+    /**
+     * Occupe une case
+     * @param symbol de type Symbol
+     * @throws IncompatibleSymbolException si une erreur est trouvée
+     */
+    void occupy(Symbol symbol) throws IncompatibleSymbolException;
 
-    protected void setSymbol(Symbol symbol) {
-        this.symbol = symbol;
-    }
+    /**
+     * Renvoi la representation d'une cellule
+     */
+    Symbol getRepresentation();
 
-    public abstract String getRepresentation();
-
-    public abstract boolean isOccupied();
-
-    protected Cell(Symbol symbol) {
-        this.symbol = symbol;
-    }
-
-    public abstract void occupy(Symbol symbol) throws IncompatibleSymbolException;
+    /**
+     * Définit la représentation d'une cellule
+     * @param representation de type Symbol
+     */
+    void setRepresentation(Symbol representation);
 }

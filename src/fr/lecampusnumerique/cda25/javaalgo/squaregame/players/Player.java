@@ -2,16 +2,20 @@ package fr.lecampusnumerique.cda25.javaalgo.squaregame.players;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.symbols.Symbol;
 
-public abstract class Player {
+/**
+ * Interface Player
+ */
+public interface Player {
 
-    private Symbol symbol;
+    /**
+     * Méthode qui récupère une representation d'un player
+     */
+    Symbol getRepresentation();
 
-    protected Symbol getSymbol(){
-        return symbol;
-    }
-
-    protected void setSymbol(Symbol symbol){
-        this.symbol = symbol;
-    }
+    /**
+     * Méthode qui définit la representation d'un player
+     * @param representation de type Symbol
+     */
+    void setRepresentation(Symbol representation);
 
 }
