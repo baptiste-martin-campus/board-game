@@ -46,6 +46,7 @@ public enum View {
         System.out.println(line.repeat(nbLine));
     }
 
+<<<<<<< Updated upstream
     public void displayNbPlayerChoice(){
         System.out.println("Saisissez le type de partie:");
         System.out.println("0: Joueur VS Joueur");
@@ -94,5 +95,25 @@ public enum View {
 
     public void displayErrorAgainAgain(){
         System.err.println("Bon tu abuses là, tu cherches la bagarre ? Tu veux jouer ou pas ?");
+=======
+    public void displayNbPlayerChoice(int nbPlayer){
+        System.out.println("Choisissez le nombre de joueurs");
+        boolean isValid = false;
+        try {
+            Integer.parseInt(String.valueOf(nbPlayer));
+            isValid = true;
+        } catch (NumberFormatException e) {
+            System.out.println("Nombre invalide, veuillez recommencer");
+        }
+        if (isValid && nbPlayer >= 0 && nbPlayer <= 2) {
+            if (nbPlayer == 0) {
+                System.out.println("COM VS COM");git branch
+            } else if (nbPlayer == 1) {
+                System.out.println("Joueur1 VS COM");
+            } else {
+                System.out.println("Joueur1 VS Joueur2");
+            }
+        }
+>>>>>>> Stashed changes
     }
 }
