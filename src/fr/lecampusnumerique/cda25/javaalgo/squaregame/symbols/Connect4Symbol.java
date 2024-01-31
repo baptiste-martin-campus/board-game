@@ -10,7 +10,7 @@ public enum Connect4Symbol implements Symbol {
     J("J"),
     ;
 
-    private String representation;
+    private final String representation;
 
     public String getRepresentation() {
         return representation;
@@ -31,18 +31,4 @@ public enum Connect4Symbol implements Symbol {
         return null;
     }
 
-    @Override
-    public void setSymbol(String symbol) {
-        this.representation = symbol;
-    }
-
-    @Override
-    public boolean isOccupied() {
-        return false;
-    }
-
-    @Override
-    public void occupy(Symbol symbol) {
-
-    }
 }

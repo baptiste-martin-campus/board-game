@@ -11,7 +11,7 @@ public enum TicTacToeSymbol implements Symbol {
     O("O"),
     ;
 
-    private String representation;
+    private final String representation;
 
     /**
      * Méthode qui va renvoyer la representation d'un symbole
@@ -44,32 +44,4 @@ public enum TicTacToeSymbol implements Symbol {
         return representation;
     }
 
-    /**
-     * Méthode qui va définir un symbole
-     * @see Symbol
-     */
-    @Override
-    public void setSymbol(String symbol) {
-        this.representation = symbol;
-    }
-
-    /**
-     * Méthode qui détermine si une case est occupée
-     * @see Symbol
-     * @return boolean
-     */
-    @Override
-    public boolean isOccupied() {
-        return false;
-    }
-
-    /**
-     * Méthode qui permet d'occuper une case
-     * @param symbol de type Symbol
-     * @see Symbol
-     */
-    @Override
-    public void occupy(Symbol symbol) {
-
-    }
 }
