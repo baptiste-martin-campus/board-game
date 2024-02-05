@@ -11,9 +11,10 @@ public enum TicTacToeSymbol implements Symbol {
     O("O"),
     ;
 
-    private Symbol representation;
+    private String representation;
 
     TicTacToeSymbol(String representation) {
+        this.representation = representation;
     }
 
     /**
@@ -22,8 +23,8 @@ public enum TicTacToeSymbol implements Symbol {
      * @return String
      */
     @Override
-    public char getRepresentation() {
-        return representation.getRepresentation();
+    public String getRepresentation() {
+        return this.representation;
     }
 
     /**
@@ -32,7 +33,7 @@ public enum TicTacToeSymbol implements Symbol {
      * @param symbol de type Symbol
      */
     @Override
-    public void setRepresentation(Symbol symbol) {
+    public void setRepresentation(String symbol) {
         this.representation = symbol;
     }
 

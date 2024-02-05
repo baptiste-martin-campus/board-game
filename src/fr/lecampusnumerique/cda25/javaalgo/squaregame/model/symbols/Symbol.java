@@ -12,12 +12,12 @@ public interface Symbol {
      *
      * @return char
      */
-    char getRepresentation();
+    String getRepresentation();
 
     /**
      * Méthode qui va définir une chaine de caractères qui représentera un symbole
      */
-    void setRepresentation(Symbol symbol);
+    void setRepresentation(String symbol);
 
     /**
      * @return liste de symboles pour le joueur
