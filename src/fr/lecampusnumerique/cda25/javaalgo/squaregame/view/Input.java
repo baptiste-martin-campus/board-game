@@ -26,7 +26,7 @@ public class Input {
         return strUpper.equals("OUI") || strUpper.equals("O") ;
     }
 
-    int getGame(){
+    public int getGame(){
         int entier;
         do {
             this.scanner = new Scanner(System.in);
