@@ -21,6 +21,10 @@ public class Input {
         return this.scanner.nextInt();
     }
 
+    /**
+     *Verifie si le player est humain ou IA
+     * @return un boolean
+     */
     public boolean isHumanPlayer(){
         this.scanner = new Scanner(System.in);
         String str = this.scanner.nextLine();
@@ -28,6 +32,11 @@ public class Input {
         return strUpper.equals("OUI") || strUpper.equals("O") ;
     }
 
+    /**
+     *
+     *Chaque entier retourner sera affecter à un jeu
+     * @return un entier entre 0 et 2
+     */
     public int getGame(){
         int entier;
         do {
