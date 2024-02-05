@@ -40,7 +40,7 @@ public class Input {
         do {
             this.scanner = new Scanner(System.in);
             entier = this.scanner.nextInt();
-        }while (entier < 3);
+        }while (entier >= 2);
         return entier;
     }
 

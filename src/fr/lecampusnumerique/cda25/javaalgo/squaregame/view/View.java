@@ -47,6 +47,14 @@ public class View {
         }
     }
 
+    public void displayWinner(Player player){
+        System.out.println("Félicitations joueur " + player.getRepresentation() + ", tu as gagné ! \uD83D\uDC4F \uD83D\uDC4F \uD83D\uDC4F");
+    }
+
+    public void displayTied(){
+        System.out.println("Aucun gagnant ! C'est affligeant ... \uD83D\uDE2D \uD83D\uDE2D \uD83D\uDE2D");
+    }
+
     public void callPlayer(Player player) {
         System.out.println("Joueur " + player.getRepresentation());
     }

@@ -7,13 +7,16 @@ public class InitGame {
     //private TicTacToe ticTacToe;
 
     private Game game;
-    public InitGame(){
+
+    public void gameChoice(){
         Input input = new Input();
         View view = new View();
-        switch (input.getGame()){
+        int test = input.getGame();
+        switch (test){
             case 0 :
                 view.displayGame(0);
                 this.game = new TicTacToe();
+                this.game.play();
                 break;
             /*case 1 :
                 view.displayGame(input.getGame());
@@ -30,7 +33,6 @@ public class InitGame {
 
 
         }
-        this.game.start();
 
     }
 }

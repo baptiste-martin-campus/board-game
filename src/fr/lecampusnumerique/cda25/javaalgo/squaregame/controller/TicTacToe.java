@@ -132,8 +132,8 @@ public class TicTacToe implements Game {
                 }
             }
             if (x >= 0 && x <= this.ticTacToeBoard.getLargeur() && y >= 0 && y <= this.ticTacToeBoard.getLongueur()) {
-                if (this.ticTacToeBoard.getBoard()[x][y].isOccupied()){
-                    if (isNumeric(Integer.toString(y)) && isNumeric(Integer.toString(x))){
+                if (this.ticTacToeBoard.getBoard()[x][y].isOccupied()) {
+                    if (isNumeric(Integer.toString(y)) && isNumeric(Integer.toString(x))) {
                         return new int[]{x, y};
                     } else {
                         view.displayNotANumberError();
@@ -187,6 +187,7 @@ public class TicTacToe implements Game {
             gagnant = true; // Le joueur a gagné sur la diagonale inverse
         }
 
+
         return gagnant;// condition de victoire
     }
 
@@ -198,7 +199,14 @@ public class TicTacToe implements Game {
     //vérifie si la partie est finie
     @Override
     public boolean isOver() {
-        return isWinner() || isBoardFull();
+        if (isWinner()) {
+            view.displayWinner(this.currentPlayer);
+            return isWinner();
+        } else if (isBoardFull()) {
+            view.displayTied();
+            return isBoardFull();
+        }
+        return false;
     }
 
     public static boolean isNumeric(String str) {
