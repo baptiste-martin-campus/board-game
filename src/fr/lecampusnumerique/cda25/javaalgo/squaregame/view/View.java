@@ -1,6 +1,7 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.view;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.controller.Menu;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.controller.TicTacToe;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.cell.Cell;
 import java.util.Arrays;
 
@@ -11,6 +12,26 @@ public class View {
         for (Menu el : menu) {
             System.out.println(el + ":" + Arrays.toString(menu));
         }
+        displayGame();
+    }
+
+    public void displayGame(){
+        Input input = new Input();
+        if (input.getGame() == 0){
+            TicTacToe ticTacToe = new TicTacToe();
+            System.out.println("Game " + Menu.TIC_TAC_TOE);
+            ticTacToe.start();
+        }else if (input.getGame() == 1){
+            System.out.println("Game " + Menu.GOMOKU);
+        }else if (input.getGame() == 2){
+            System.out.println("Game " + Menu.CONNECT4);
+        }else {
+            System.out.println("Votre choix de jeu n'est pas sur la liste !");
+        }
+    }
+
+    public void controlChoiceGame(){
+
     }
 
     //affichage du plateau
@@ -39,6 +60,7 @@ public class View {
     }
 
     public void displayCoordinateError() {
+
         System.out.println("Saisie incorrecte !");
     }
 }

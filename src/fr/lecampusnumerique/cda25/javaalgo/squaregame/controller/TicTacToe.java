@@ -24,6 +24,7 @@ public class TicTacToe implements Game{
      */
     @Override
     public void start() {
+        play();
     }
 
     @Override
