@@ -12,7 +12,7 @@ public enum Menu {
     CONNECT4(3),
     ;
 
-    Menu(int game) {
+    Menu(int num) {
 
     }
 

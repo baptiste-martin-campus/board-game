@@ -9,7 +9,7 @@ public interface Rule {
 
     boolean isOver();
 
-    Player switchPlayers(Player player, Player player2, Player currentPlayer);
+    Player switchPlayers();
 
     boolean isBoardFull();
 }

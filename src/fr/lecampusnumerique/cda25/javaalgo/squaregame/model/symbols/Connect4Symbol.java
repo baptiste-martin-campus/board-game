@@ -10,13 +10,20 @@ public enum Connect4Symbol implements Symbol {
     J("J"),
     ;
 
-    private Symbol representation;
+    private String representation;
 
     Connect4Symbol(String representation) {
+        this.representation = representation;
     }
 
-    public char getRepresentation() {
-        return representation.getRepresentation();
+    /**
+     * Méthode qui va renvoyer une chaine de caractères qui représentera un symbole
+     *
+     * @return String
+     */
+    @Override
+    public String getRepresentation() {
+        return this.representation;
     }
 
     /**
@@ -25,12 +32,12 @@ public enum Connect4Symbol implements Symbol {
      * @param symbol de type Symbol
      */
     @Override
-    public void setRepresentation(Symbol symbol) {
+    public void setRepresentation(String symbol) {
         this.representation = symbol;
     }
 
     /**
-     * @return liste de symboles pour le joueur
+     * @return liste de symboles pour le joueur (différent de DEFAULT)
      */
     @Override
     public List<Symbol> getPlayerSymbols(){

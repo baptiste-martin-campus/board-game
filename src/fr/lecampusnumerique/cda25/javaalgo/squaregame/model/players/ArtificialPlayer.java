@@ -7,7 +7,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class ArtificialPlayer implements Player {
 
-    public Symbol representation = null;
+    private Symbol representation;
+
+    public ArtificialPlayer(TicTacToeSymbol representation){
+        this.representation = representation;
+    }
 
     @Override
     public void setRepresentation(Symbol representation) {
