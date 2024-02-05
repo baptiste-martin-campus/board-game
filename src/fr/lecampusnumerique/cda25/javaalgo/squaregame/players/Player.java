@@ -6,7 +6,7 @@ public abstract class Player {
 
     private Symbol symbol;
 
-    protected Symbol getSymbol(){
+    public Symbol getSymbol(){
         return symbol;
     }
 

@@ -24,4 +24,9 @@ public class Connect4Board extends Board {
     public boolean verifyCoordOrd(int coord){
         return coord >= 0 && coord < getLongueur();
     }
+
+    @Override
+    public boolean isFull() {
+        return false;
+    }
 }

@@ -1,4 +1,4 @@
-package fr.lecampusnumerique.cda25.javaalgo.squaregame.board;
+package fr.lecampusnumerique.cda25.javaalgo.squaregame;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.View;
 

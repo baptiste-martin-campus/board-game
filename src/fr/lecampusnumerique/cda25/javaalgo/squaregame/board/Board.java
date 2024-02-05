@@ -42,4 +42,6 @@ public abstract class Board {
 
     public abstract boolean verifyCoordOrd(int coord);
 
+    public abstract boolean isFull();
+
 }
