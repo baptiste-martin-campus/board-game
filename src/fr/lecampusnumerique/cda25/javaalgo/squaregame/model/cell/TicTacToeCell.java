@@ -13,12 +13,17 @@ public class TicTacToeCell implements Cell {
 
     private Symbol representation;
 
+    public TicTacToeCell(){
+        this.representation = TicTacToeSymbol.DEFAULT;
+    }
+
     /**
      * Détermine si une case est occupée
      */
     @Override
     public boolean isOccupied() {
-        return getRepresentation() != TicTacToeSymbol.DEFAULT;
+        System.out.println(getRepresentation());
+        return getRepresentation().equals(TicTacToeSymbol.DEFAULT);
     }
 
     /**

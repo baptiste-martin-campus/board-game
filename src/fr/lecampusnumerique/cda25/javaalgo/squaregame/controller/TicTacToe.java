@@ -1,41 +1,43 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.controller;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.board.TicTacToeBoard;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.cell.Cell;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.players.ArtificialPlayer;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.players.Player;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.players.TicTacToePlayer;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.symbols.Symbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.symbols.TicTacToeSymbol;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.symbols.exception.IncompatibleSymbolException;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.view.Input;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.view.View;
 
-public class TicTacToe implements Game{
+public class TicTacToe implements Game {
 
     View view = new View();
     Input userInter = new Input();
-    TicTacToeBoard ticTacToeBoard = new TicTacToeBoard(3,3);
-    Player player1 = new TicTacToePlayer();
-    Player player2 = new TicTacToePlayer();
-    Player currentPlayer = this.player1;
-    int compteur=0;
+    TicTacToeBoard ticTacToeBoard = new TicTacToeBoard(3, 3);
+    Player player1;
+    Player player2;
+    Player currentPlayer;
+    int compteur = 0;
 
     /**
      *
      */
     @Override
     public void start() {
-        play();
     }
 
     @Override
     //le jeu se joue
     public void play() {
-        userInter.isHumanPlayer();
+        // tant que le jeu n'est pas fini, il continue
+        setPlayers();
         while (!isOver()) {
             setOwner(getMoveFromPlayer(currentPlayer), currentPlayer);
             compteur++;
             view.displayBoard(ticTacToeBoard.getBoard());
-            switchPlayers(this.player1, this.player2, currentPlayer);
+            this.currentPlayer = switchPlayers();
         }
     }
 
@@ -62,22 +64,40 @@ public class TicTacToe implements Game{
     }
 
     /**
-     * @param playerList list of players
+     * list of players
      */
     @Override
-    public void setPlayers(Player[] playerList) {
-        playerList = new Player[] {player1, player2};
+    public void setPlayers() {
+        // initialisation des players
+        this.player1 = new TicTacToePlayer(TicTacToeSymbol.X);
+        this.player2 = new TicTacToePlayer(TicTacToeSymbol.O);
+        this.currentPlayer = player1;
+        view.callPlayer(this.currentPlayer);
+        view.askPlayerIsHuman();
+        if (!userInter.isHumanPlayer()) {
+            this.player1 = new ArtificialPlayer(TicTacToeSymbol.X);
+        }
+
+        this.currentPlayer = switchPlayers();
+        view.callPlayer(this.currentPlayer);
+        view.askPlayerIsHuman();
+        if (!userInter.isHumanPlayer()) {
+            this.player2 = new ArtificialPlayer(TicTacToeSymbol.O);
+        }
+
+        this.currentPlayer = switchPlayers();
     }
 
     /**
-     * @param player1 représente le 1er joueur
-     * @param player2 représente le second joueur
-     * @param currentPlayer représente le joueur actuel
+     * Player1 représente le 1er joueur
+     * player2 représente le second joueur
+     * currentPlayer représente le joueur actuel
+     *
      * @return un joueur dont c'est le tour de jouer
      */
     @Override
-    public Player switchPlayers(Player player1, Player player2, Player currentPlayer) {
-        return currentPlayer != player1 ? player1 : player2 ;
+    public Player switchPlayers() {
+        return this.currentPlayer != this.player1 ? this.player1 : this.player2;
     }
 
     //demande et récupère les coordonnées x et y d'une cellule donnée par le joueur
@@ -103,17 +123,25 @@ public class TicTacToe implements Game{
                 }
 
             } else {
-                try{
+                try {
                     ArtificialPlayer ap = (ArtificialPlayer) currentPlayer;
-                    x = ap.getRandom(0, ticTacToeBoard.getLargeur());
-                    y = ap.getRandom(0, ticTacToeBoard.getLongueur());
-                } catch(Exception e) {
+                    x = ap.getRandom(0, this.ticTacToeBoard.getLargeur());
+                    y = ap.getRandom(0, this.ticTacToeBoard.getLongueur());
+                } catch (Exception e) {
                     error = true;
                 }
             }
-            if (x >= 0 && x <= ticTacToeBoard.getLargeur() && y >= 0 && y <= ticTacToeBoard.getLongueur() && ticTacToeBoard.getBoard()[x][y].isOccupied() && isNumeric(Integer.toString(y)) && isNumeric(Integer.toString(x))) {
-                return new int[]{x, y};
-            }else{
+            if (x >= 0 && x <= this.ticTacToeBoard.getLargeur() && y >= 0 && y <= this.ticTacToeBoard.getLongueur()) {
+                if (this.ticTacToeBoard.getBoard()[x][y].isOccupied()){
+                    if (isNumeric(Integer.toString(y)) && isNumeric(Integer.toString(x))){
+                        return new int[]{x, y};
+                    } else {
+                        view.displayNotANumberError();
+                    }
+                } else {
+                    view.displayCellOccupiedError();
+                }
+            } else {
                 view.displayCoordinateError();
             }
         }
@@ -130,31 +158,32 @@ public class TicTacToe implements Game{
 
     @Override
     public boolean isWinner() {
-        Symbol playerSymbol = currentPlayer.getRepresentation();
+        Symbol playerSymbol = this.currentPlayer.getRepresentation();
+        Cell[][] board = this.ticTacToeBoard.getBoard();
         boolean gagnant = false;
         // Vérification des lignes
-        for (int i = 0; i < 3; i++) {
-            if (this.ticTacToeBoard.getBoard()[i][0].getRepresentation().equals(playerSymbol) && this.ticTacToeBoard.getBoard()[i][1].getRepresentation().equals(playerSymbol) && this.ticTacToeBoard.getBoard()[i][2].getRepresentation().equals(playerSymbol)) {
+        for (int i = 0; i < ticTacToeBoard.getLongueur(); i++) {
+            if (board[i][0].getRepresentation().equals(playerSymbol) && board[i][1].getRepresentation().equals(playerSymbol) && board[i][2].getRepresentation().equals(playerSymbol)) {
                 gagnant = true; // Le joueur a gagné sur une ligne
                 break;
             }
         }
 
         // Vérification des colonnes
-        for (int j = 0; j < 3; j++) {
-            if (this.ticTacToeBoard.getBoard()[0][j].getRepresentation().equals(playerSymbol) && this.ticTacToeBoard.getBoard()[1][j].getRepresentation().equals(playerSymbol) && this.ticTacToeBoard.getBoard()[2][j].getRepresentation().equals(playerSymbol)) {
+        for (int j = 0; j < ticTacToeBoard.getLargeur(); j++) {
+            if (board[0][j].getRepresentation().equals(playerSymbol) && board[1][j].getRepresentation().equals(playerSymbol) && board[2][j].getRepresentation().equals(playerSymbol)) {
                 gagnant = true; // Le joueur a gagné sur une colonne
                 break;
             }
         }
 
         // Vérification de la diagonale principale
-        if (this.ticTacToeBoard.getBoard()[0][0].getRepresentation().equals(playerSymbol) && this.ticTacToeBoard.getBoard()[1][1].getRepresentation().equals(playerSymbol) && this.ticTacToeBoard.getBoard()[2][2].getRepresentation().equals(playerSymbol)) {
+        if (board[0][0].getRepresentation().equals(playerSymbol) && board[1][1].getRepresentation().equals(playerSymbol) && board[2][2].getRepresentation().equals(playerSymbol)) {
             gagnant = true; // Le joueur a gagné sur la diagonale principale
         }
 
         // Vérification de la diagonale inverse
-        if (this.ticTacToeBoard.getBoard()[0][2].getRepresentation().equals(playerSymbol) && this.ticTacToeBoard.getBoard()[1][1].getRepresentation().equals(playerSymbol) && this.ticTacToeBoard.getBoard()[2][0].getRepresentation().equals(playerSymbol)) {
+        if (board[0][2].getRepresentation().equals(playerSymbol) && board[1][1].getRepresentation().equals(playerSymbol) && board[2][0].getRepresentation().equals(playerSymbol)) {
             gagnant = true; // Le joueur a gagné sur la diagonale inverse
         }
 
@@ -163,7 +192,7 @@ public class TicTacToe implements Game{
 
     //vérifie si le plateau est plein
     public boolean isBoardFull() {
-        return this.ticTacToeBoard.getLargeur() * this.ticTacToeBoard.getLongueur() == compteur ;
+        return this.ticTacToeBoard.getLargeur() * this.ticTacToeBoard.getLongueur() == compteur;
     }
 
     //vérifie si la partie est finie

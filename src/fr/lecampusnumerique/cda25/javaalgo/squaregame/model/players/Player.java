@@ -1,6 +1,7 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.model.players;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.symbols.Symbol;
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.symbols.TicTacToeSymbol;
 
 /**
  * Interface Player
@@ -18,5 +19,4 @@ public interface Player {
      * @param representation de type Symbol
      */
     void setRepresentation(Symbol representation);
-
 }

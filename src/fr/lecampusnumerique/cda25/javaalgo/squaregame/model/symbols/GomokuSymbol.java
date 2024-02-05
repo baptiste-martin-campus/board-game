@@ -9,14 +9,15 @@ public enum GomokuSymbol implements Symbol{
     B("B"),
     ;
 
-    private Symbol representation;
+    private String representation;
 
     GomokuSymbol(String representation) {
+        this.representation = representation;
     }
 
 
-    public char getRepresentation() {
-        return representation.getRepresentation();
+    public String getRepresentation() {
+        return this.representation;
     }
 
     /**
@@ -25,10 +26,14 @@ public enum GomokuSymbol implements Symbol{
      * @param symbol de type Symbol
      */
     @Override
-    public void setRepresentation(Symbol symbol) {
+    public void setRepresentation(String symbol) {
         this.representation = symbol;
     }
 
+
+    /**
+     * @return liste de symboles pour le joueur (différent de DEFAULT)
+     */
     public List<Symbol> getPlayerSymbols(){
         return Arrays.stream(GomokuSymbol.values())
                 .filter(gomokuSymbol -> gomokuSymbol != DEFAULT)

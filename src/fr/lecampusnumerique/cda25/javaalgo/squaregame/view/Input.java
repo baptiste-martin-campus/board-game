@@ -11,13 +11,11 @@ public class Input {
 
     public int getCoordinateX(){
         this.scanner = new Scanner(System.in);
-        view.askCoordinateX();
         return this.scanner.nextInt();
     }
 
     public int getCoordinateY(){
         this.scanner = new Scanner(System.in);
-        view.askCoordinateY();
         return this.scanner.nextInt();
     }
 

@@ -14,12 +14,12 @@ public interface Game extends Rule {
 
     Player[] getPlayers();
 
-    void setPlayers(Player[] playerList);
+    void setPlayers();
 
     boolean isOver();
 
     @Override
-    Player switchPlayers(Player player, Player player2, Player currentPlayer);
+    Player switchPlayers();
 
     boolean isBoardFull();
 
