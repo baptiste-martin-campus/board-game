@@ -6,11 +6,12 @@ public abstract class GeneralBoard {
 
     private int longueur;
     private int largeur;
-    private Cell[][] board;
+    protected Cell[][] board;
 
     public GeneralBoard(int largeur, int longueur){
         this.largeur = largeur;
         this.longueur = longueur;
+        this.board = new Cell[largeur][longueur];
     }
 
     public int getLongueur() {
@@ -27,6 +28,14 @@ public abstract class GeneralBoard {
 
     public void setLargeur(int largeur) {
         this.largeur = largeur;
+    }
+
+    public Cell[][] getBoard(){
+        return board;
+    }
+
+    public void setBoard(Cell[][] board){
+        this.board = board;
     }
 
 }

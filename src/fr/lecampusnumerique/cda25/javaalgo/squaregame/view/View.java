@@ -2,10 +2,9 @@ package fr.lecampusnumerique.cda25.javaalgo.squaregame.view;
 
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.controller.Menu;
 import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.cell.Cell;
-
 import java.util.Arrays;
 
-public enum View {
+public class View {
 
     public void displayGameList(Menu[] menu){
         System.out.println("Quel jeu voulez-vous lancer ?");
@@ -16,7 +15,7 @@ public enum View {
 
     //affichage du plateau
     public void displayBoard(Cell[][] board) {
-        int nbLine = board[0][0].getRepresentation().length() * board.length + 1;
+        int nbLine = board.length + 1;
         String line = "-";
         System.out.println(line.repeat(nbLine));
         for (Cell[] cells : board) {
@@ -39,4 +38,7 @@ public enum View {
         System.out.println("Entrez la coordonnée ordonnée : ");
     }
 
+    public void displayCoordinateError() {
+        System.out.println("Saisie incorrecte !");
+    }
 }

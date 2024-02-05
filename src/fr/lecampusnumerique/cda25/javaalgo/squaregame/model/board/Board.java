@@ -1,5 +1,7 @@
 package fr.lecampusnumerique.cda25.javaalgo.squaregame.model.board;
 
+import fr.lecampusnumerique.cda25.javaalgo.squaregame.model.cell.Cell;
+
 public interface Board {
 
     int getLargeur();
@@ -9,4 +11,9 @@ public interface Board {
     void setLargeur(int largeur);
 
     void setLongueur(int longueur);
+
+    Cell[][] getBoard();
+
+    void setBoard(Cell[][] board);
+
 }
