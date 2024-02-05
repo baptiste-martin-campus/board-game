@@ -14,18 +14,15 @@ public class View {
         for (Menu el : menu) {
             System.out.println(el + ":" + Arrays.toString(menu));
         }
-        displayGame();
+
     }
 
-    public void displayGame() {
-        Input input = new Input();
-        if (input.getGame() == 0) {
-            TicTacToe ticTacToe = new TicTacToe();
+    public void displayGame(int input) {
+        if (input == 0) {
             System.out.println("Game " + Menu.TIC_TAC_TOE);
-            ticTacToe.start();
-        } else if (input.getGame() == 1) {
+        } else if (input == 1) {
             System.out.println("Game " + Menu.GOMOKU);
-        } else if (input.getGame() == 2) {
+        } else if (input == 2) {
             System.out.println("Game " + Menu.CONNECT4);
         } else {
             System.out.println("Votre choix de jeu n'est pas sur la liste !");

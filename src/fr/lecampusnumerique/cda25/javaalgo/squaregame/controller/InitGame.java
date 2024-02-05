@@ -12,7 +12,7 @@ public class InitGame {
         View view = new View();
         switch (input.getGame()){
             case 0 :
-                view.displayGame(input.getGame());
+                view.displayGame(0);
                 this.game = new TicTacToe();
                 break;
             /*case 1 :
